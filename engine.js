@@ -8,7 +8,15 @@ function postToPage(message) {
 
 function createButton(message, script) {
   var button = document.createElement('button');
-  button.className = 'btn btn-primary';
+  button.className = 'btn btn-outline-success';
+  button.type = 'button';
+  button.innerHTML = message;
+  button.addEventListener('click', script);
+  document.getElementById('buttons').appendChild(button);
+}
+function createButton(message, script) {
+  var button = document.createElement('button');
+  button.className = 'btn btn-outline-danger';
   button.type = 'button';
   button.innerHTML = message;
   button.addEventListener('click', script);
