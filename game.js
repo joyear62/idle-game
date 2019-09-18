@@ -1,4 +1,4 @@
-var score = 0;
+var score = 1; // Create a variable to store the score in
 
 postToPage(score);
 
