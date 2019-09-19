@@ -1,41 +1,3 @@
-function postToPage(message) {
-  var para = document.createElement("p");                 // Create a <p> element
-  para.innerHTML = message;
-  para.id = 'message'
-  var child = document.getElementById('message');                         // Insert text
-  document.getElementById("game").replaceChild(para, child);   // Append <p> to <div> with id="myDIV"
-}
-
-function createButton(message, script) {
-  var button = document.createElement('button');
-  button.className = 'btn btn-outline-success';
-  button.type = 'button';
-  button.innerHTML = message;
-  button.addEventListener('click', script);
-  document.getElementById('buttons').appendChild(button);
-}
-
-function changeTitle(text) {
-  let title = document.getElementById('title');
-  title.innerHTML = text;
-}
-
-function createText(text, id, parentId) {
-  let newText = document.createElement('p');
-  newText.innerHTML = text;
-  newText.id = id;
-  if(!parentId) {
-    parentId = "game";
-  }
-  let parent = document.getElementById(parentId);
-  parent.appendChild(newText);
-}
-
-function addStyle(id, attribute, value) {
-  let element = document.getElementById(id);
-  element.style[attribute] = "value";
-}
-
 class HTMLElement {
   constructor(tag, value, id, parent) {
     this.tag = tag;
@@ -113,6 +75,19 @@ class Button extends HTMLElement {
     button.type = this.type;
     button.innerHTML = this.value;
     button.addEventListener('click', this.script);
+  }
+}
+class Button1 extends HTMLElement {
+  constructor(value, script, id, parent) {
+    super('button', value, id, parent);
+    this.script = script;
+    this.className = 'btn btn-primary';
+    this.type = 'button1';
+    let button1 = this.getElement();
+    button1.className = this.className;
+    button1.type = this.type;
+    button1.innerHTML = this.value;
+    button1.addEventListener('click', this.script);
   }
 }
 
