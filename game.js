@@ -5,7 +5,7 @@ var button = new Button('Press', btnPress);   // Create a button element
 var hidden = new Button('Press', btnPress);
 hidden.hide();
 var scr = new Text(score);                    // Create a text element
-
+//changes
 setInterval(btnPress, 1000);   // Set up a loop
 
 function btnPress() {
